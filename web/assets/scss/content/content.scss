@@ -1,0 +1,19 @@
+/* content.scss "content" block */
+
+/* block */
+.content {
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+
+.content__row {
+    display: flex;
+    width: 100%;
+    margin: 5px;
+    justify-content: space-between;
+}
+
+content__item {
+    
+}

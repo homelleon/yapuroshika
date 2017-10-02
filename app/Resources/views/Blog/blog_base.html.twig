@@ -1,0 +1,59 @@
+{# --Blogger:Blog:blo_base.html.twig---
+=========================================
+Base template with navigation for pages #}
+
+{% extends 'base.html.twig' %}
+
+{# navigation #}
+{% block navigation %}
+    <div class="navigation">
+        <div class="navigation__row">
+            <a class="navigation__item button button_orange" href="{{ path('main') }}">
+                Главная
+            </a>
+            <a class="navigation__item button button_orange" id="about" href="{{ path('about') }}">
+                О нас
+            </a>
+            <a class="navigation__item button button_orange" href="{{ path('lessons') }}">
+                Занятия
+            </a>
+            <a class="navigation__item button button_orange" href="{{ path('teachers') }}">
+                Преподаватели
+            </a>
+            <a class="navigation__item button button_orange" href="{{ path('study-in-japan') }}">
+                Обучение в Японии
+            </a>
+            <a class="navigation__item button button_orange" href="{{ path('contacts') }}">
+                Контакты
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+{# body #}
+{% block body %}    
+    {% block content %}
+        <div class="content">
+            <div class="inner inner_red">
+                <div class="inner__border">
+                    {% block text %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}
+
+{# sidebar #}
+{% block sidebar %}{% endblock %}
+{% block footer_navigation %}
+    <div class="footer__navigation">
+        <a class="button button_black" href="{{ path('main') }}">Главная</a>
+        <a class="button button_black" href="{{ path('about') }}">О нас</a>
+        <a class="button button_black" href="{{ path('lessons') }}">Занятия</a>
+        <a class="button button_black" href="{{ path('teachers') }}">Преподаватели</a>
+        <a class="button button_black" href="{{ path('study-in-japan') }}">Обучение в Японии</a>
+        <a class="button button_black" href="{{ path('contacts') }}">Контакты</a>
+    </div>
+{% endblock %}
+                

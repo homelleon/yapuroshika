@@ -1,0 +1,13 @@
+{# AppBundle:Blog:News:news_sorted.html.twig
+================================================
+--------Template for sorted articles-----------#}
+
+{% extends ':Blog/Page:index.html.twig' %}
+
+{% block sort %}
+    Сортировка по {{ categoryRus }} "{{ value }}"
+{% endblock %}
+
+{% block page_link %}
+    <a href="{{ path('news_sorted', { 'category': category, 'value': value, 'page': page }) }}">{{ page }}</a>
+{% endblock %}

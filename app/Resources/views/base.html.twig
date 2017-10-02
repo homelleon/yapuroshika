@@ -1,0 +1,83 @@
+{#--------AppBundle:base.html.twig---------
+===========================================
+Main basic template with preload settings#}
+
+<!DOCTYPE html>
+<html>
+    {# ----->head<------- #}
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title  %}Япроська{% endblock %}</title>               
+        {% block stylesheets %}
+            {% include 'styles.html.twig' %}
+        {% endblock %}        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    {# ----->body<------ #}
+    <body class="page">
+        <div class="page__row page__upper">
+            {# ---------header--------- #}
+            <div class="page__row header">
+
+                <div class="side-container"></div>
+
+                <div class="main-container">
+                    <div class="header__row space-between">
+                        <div class="header-left">
+                            <div class="logo logo_container">
+                                <a class="logo logo_small logo__row" href="{{ path('main') }}">
+                                    {#<img class="logo" src="{{ asset('images/logo.png') }}" alt="logo" />#}
+                                        Школа японского языка
+                                </a>
+                                <a class="logo logo_big" href="{{ path('main') }}">
+                                    Япроська
+                                </a>
+                            </div>
+
+                            {% block navigation %}{% endblock %}
+                        </div>
+                        {% block login %}
+                            {% include 'authorisation.html.twig'%}
+                        {% endblock %}
+                    </div>
+                </div>
+                <div class="side-container"></div>
+            </div>
+            {# ----------middle------------ #}
+            <div class="page__middle">	
+                <div class="side-container"></div>	
+
+                <div class="main-container">
+                        {% block body %}{% endblock %}
+                    <div class="sidebar">
+                        {% block sidebar %}{% endblock %}
+                    </div>
+                </div>
+                <div class="side-container"></div> 
+            </div>            
+        </div>
+                    
+        {# -----------footer------------ #}
+        <div class="page__row footer">
+            <div class="footer__border">
+                <div class="side-container"></div>
+                <div class="main-container">
+                    {% block footer_navigation %}{% endblock %}
+                </div>                           
+                <div class="side-container"></div>
+            </div>         
+            <div class="footer__row">
+                <div class="side-container"></div>
+                <div class="main-container">
+                    <div class="footer__copyright">
+                        Все фото, видео и изображения в статьях принадлежат их создателям &copy;2017 Сергей Япрошик                       
+                    </div> 
+                </div>
+                <div class="side-container"></div>
+            </div>
+        </div>
+        {% block javascripts %}
+            {% include 'javascripts.html.twig' %}
+        {% endblock %}
+    </body>
+</html>

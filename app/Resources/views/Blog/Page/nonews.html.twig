@@ -1,0 +1,13 @@
+{# AppBundle:Blog:Page:base.html.twig
+========================================
+Template to show pages without articles #}
+
+{% extends ':Blog:blog_base.html.twig' %}
+
+{% block content %}
+    <div class="inner inner_red">
+        <div class="inner__border">
+            {% block text %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

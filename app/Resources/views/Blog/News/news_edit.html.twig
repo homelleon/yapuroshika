@@ -1,0 +1,26 @@
+{# AppBundle:Blog:News:news_edit.html.twig
+==============================================
+----Template doe editing existing article-----#}
+
+{% extends ':Blog:blog_base.html.twig' %}
+
+{% block content %}
+    <div class="form">
+        <div class="inner innner_red">
+            <div class="inner__border">
+                <div class="form__row">                
+                    <a class="button button_orange button_to-return"
+                       href="{{ path("main") }}" >
+                        Назад
+                    </a>
+                    <div></div>
+                </div>
+                <div class="form__row">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
